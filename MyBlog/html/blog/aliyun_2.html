@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../../pic/title.ico">
+	<title>阿里云问题解决</title>
+
+
+	<!-- Bootstrap 核心 CSS 文件 --> 
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+	<link rel="stylesheet" type="text/css" href="../../css/blog_page_style.css">
+
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="page-header">
+			<h2>阿里云问题解决</h2>
+		</div>
+
+		<div class="blog_post">
+            <h3 class="blog_post_title">mysql“Access denied for user 'root'@'localhost'”问题的解决</h3>
+
+            <p> 
+    			我的系统是阿里云CentOS 7.2,lamp环境，在进入mysql工具时，总是有错误提示:<br>
+				# mysql -uroot -p<br>
+				Enter password:<br>
+				ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)<br>
+			</p>
+
+    		<blockquote>
+    			<p><strong>解决方法</strong><br>
+    				# /etc/init.d/mysql stop     //关闭数据库(关闭数据库语句可能在不同版本不同，新版本是/bin/systemctl stop  mysqld.service)<br>
+    				# mysqld_safe --user=mysql --skip-grant-tables --skip-networking &<br>
+    				# mysql -u root mysql<br>
+
+    				再重新启动数据库
+
+    				
+				</p>
+			</blockquote> 
+			
+			
+        </div><!-- /.blog-post -->
+
+
+
+        <div class="blog_post">
+            <h3 class="blog_post_title">阿里云esc云服务器IP不能访问的解决办法</h3>
+
+    		<blockquote>
+    			<p><strong>参考网址：http://blog.csdn.net/u010841622/article/details/72777498</strong></p>
+    			<p>找到本实例安全组，配置规则，按照要求填入80或其他端口。配置完成后，能使用公网ip加端口访问</p>
+			</blockquote> 
+
+
+			<div class="img_wrap img_wrap_2">
+
+				<img src="../../pic/blog_pic/aliyun_2_1.png">
+
+			</div> 
+
+
+			<p>点配置规则</p>
+
+
+			<div class="img_wrap img_wrap_2">
+
+				<img src="../../pic/blog_pic/aliyun_2_2.png">
+
+			</div> 
+
+			<p>新建如上图第一行的规则 </p>
+	
+			
+        </div><!-- /.blog-post -->
+
+
+
+
+        <div class="blog_post">
+            <h3 class="blog_post_title">通过公网ip访问 出现错误You don't have permission to access /html/ on this server.</h3>
+
+    		<blockquote>
+    			<p><strong>修改httpd.conf文件,修改之后要重启apache</strong></p>
+			</blockquote> 
+
+			<pre>
+				1.修改DocumentRoot
+				#
+				# DocumentRoot: The directory out of which you will serve your
+				# documents. By default, all requests are taken from this directory, but
+				# symbolic links and aliases may be used to point to other locations.
+				#
+				DocumentRoot "/var/www"   这是你想要的工作目录，主页
+
+
+				2.除了要修改/etc/httpd/conf/httpd.conf文件中的工作目录:DocumentRoot "/var/www"外,记得要把对应的工作目录权限的地址一并修改过来
+
+				DocumentRoot "/var/www"                                          //工作目录 修改这一行
+
+				Directory "/var/www">                                        //对应的权限  修改这一行
+				#
+				# Possible values for the Options directive are "None", "All",
+				# or any combination of:
+				#   Indexes Includes FollowSymLinks SymLinksifOwnerMatch ExecCGI MultiViews
+				#
+				# Note that "MultiViews" must be named *explicitly* --- "Options All"
+				# doesn't give it to you.
+				#
+				# The Options directive is both complicated and important.  Please see
+				# http://httpd.apache.org/docs/2.4/mod/core.html#options
+				# for more information.
+				#
+				Options Indexes FollowSymLinks///工作目录需要的权限
+				#
+				# AllowOverride controls what directives may be placed in .htaccess files.
+				# It can be "All", "None", or any combination of the keywords:
+				#   AllowOverride FileInfo AuthConfig Limit
+				#
+				AllowOverride None//工作目录需要的
+				#
+				# Controls who can get stuff from this server.
+				#
+				Require all granted//工作目录需要的权限
+				</<b>Directory
+
+
+				3.注释掉一些语句
+
+				<Directory
+				/>
+
+
+				    AllowOverride
+				none
+
+
+				    #Require
+				 all denied  删除或注释掉
+
+
+				</Directory>
+
+			</pre>
+	
+			
+        </div><!-- /.blog-post -->
+
+
+
+
+
+		
+		
+
+
+
+
+        <a class="back" href="../home.html">返回首页</a>
+
+      	   
+
+
+
+	</div> <!--  container -->
+
+
+
+
+
+
+</body>
+</html>

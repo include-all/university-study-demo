@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../../pic/title.ico">
+	<title>JavaScript知识点及问题解决</title>
+
+
+	<!-- Bootstrap 核心 CSS 文件 --> 
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+	<link rel="stylesheet" type="text/css" href="../../css/blog_page_style.css">
+
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="page-header">
+			<h2>JavaScript知识点及问题解决</h2>
+		</div>
+
+		<div class="blog_post">
+            <h3 class="blog_post_title">比较正宗的验证邮箱的正则表达式js代码详解</h3>
+
+    		<p>1、纯数字<br> 
+			   比如：123456@jb51.net <br>
+			   2、纯字母 <br>
+			   3、字母数字混合<br> 
+			   4、带点的 <br>
+			   比如：web.blue@jb51.net<br> 
+			   5、带下划线 <br>
+			   比如：web_blue@jb51.net<br> 
+			   6、带连接线 <br>
+			   比如：web-blue@jb51.net 
+			   邮箱域至少有一个“.”和两个单词，再严格点那么最后的顶   域至少要2个字母，最大呢？以域名“name”为准，那么最大   是4，宽松点就设为5吧^_^。<br>    
+			   当然以上不可能的情况：以“_”或“-”开头或者结尾，包含特   符号的。 
+			   因此，我给出的正则表达式如下： 
+			</p>  
+
+			<blockquote>
+				^[A-Za-zd]+([-_.][A-Za-zd]+)*@([A-Za-zd]+[-.])+[A-Za-zd]{2,5}$ 
+			</blockquote>      
+        </div><!-- /.blog-post -->
+
+		
+		<hr>
+
+        <div class="blog_post">
+            <h3 class="blog_post_title">Javascript获取select下拉框选中的的值</h3>
+
+    		<p>现在有一id=test的下拉框，怎么拿到选中的那个值呢？分别使用javascript原生的方法和jquery方法
+			</p>  
+
+
+			<pre>
+				&lt;select id=&quot;test&quot;  name=&quot;&quot;&gt;   
+					&lt;option   value=&quot;1&quot;&gt;text1&lt;/option&gt;   
+					&lt;option   value=&quot;2&quot;&gt;text2&lt;/option&gt;   
+				&lt;/select&gt;
+			</pre>
+
+
+
+			<blockquote>
+				一：javascript原生的方法<br>
+
+				  1:拿到select对象： var  myselect=document.getElementById("test");<br>
+
+				  2：拿到选中项的索引：var index=myselect.selectedIndex ;             // selectedIndex代表的是你所选中项的index<br>
+
+				  3:拿到选中项options的value：  myselect.options[index].value;<br>
+
+				  4:拿到选中项options的text：  myselect.options[index].text;<br>
+
+				二：jquery方法（前提是已经加载了jquery库）<br>
+
+				1:var options=$("#test option:selected");  //获取选中的项<br>
+
+				2:alert(options.val());   //拿到选中项的值<br>
+
+				3:alert(options.text());   //拿到选中项的文本
+			</blockquote>
+
+	
+        </div><!-- /.blog-post -->
+
+
+
+        <a class="back" href="../home.html">返回首页</a>
+
+      	   
+
+
+	</div> <!--  container -->
+
+
+
+
+
+
+</body>
+</html>

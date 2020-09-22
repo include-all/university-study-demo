@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="icon" href="pic/title.ico">
+	<title>登录页面，进入我的博客</title>
+
+
+	<!-- Bootstrap 核心 CSS 文件 --> 
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../css/signIn_page_style.css">
+
+
+	
+
+
+</head>
+<body>
+	
+	<div class="container">
+
+	    <form class="form-signin" action="../php/sign_in.php" method="post">
+	        <h2 class="form-signin-heading">Please sign in</h2>
+
+	        <label for="inputName" class="sr-only">My name</label>
+	        <input type="text" id="inputName" class="form-control" name="name" placeholder="My name" required autofocus>
+
+	        <label for="inputPassword" class="sr-only">Password</label>
+	        <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+
+	        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	    </form>
+
+    </div> <!-- /container -->
+	
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../../pic/title.ico">
+	<title>HTML&&CSS知识点及问题解决</title>
+
+
+	<!-- Bootstrap 核心 CSS 文件 --> 
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+	<link rel="stylesheet" type="text/css" href="../../css/blog_page_style.css">
+
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="page-header">
+			<h2>HTML&&CSS知识点及问题解决</h2>
+		</div>
+
+		<div class="blog_post">
+            <h3 class="blog_post_title">关于label和span设置width无效问题解决方法</h3>
+
+    		<p>
+    			在默认情况下label、span 设置width 是无效的。一般要display属性 
+			</p>  
+
+			<blockquote>
+				display:block; 
+			</blockquote>    
+
+			<p>
+				这样就可以了。但是他会自动加一个换行，如果不想换行的话，可以用 
+			</p>  
+
+			<blockquote>
+				display:inline-block; 
+			</blockquote>
+
+			<p>这样就不会换行了。。<br>
+
+				补充一下如何画出 '口口' 应该用 
+			</p>
+
+			<blockquote>
+				display:inline; 
+				float:left; 
+			</blockquote>
+
+			<p>但是一定要在后面的div里面加上 </p>
+
+			<blockquote>
+				clear:both; 
+			</blockquote>
+
+			<p>不然会影响到后面的div板式会乱</p>
+
+
+        </div><!-- /.blog-post -->
+
+		
+		<hr>
+
+        <div class="blog_post">
+            <h3 class="blog_post_title">CSS： 首字母字体变大时下划线不对齐的解决方法</h3>
+
+    		<p>昨天在写2017年百度ife任务六的时候遇到了一个排版问题，需要首字母字体变大的同时，下划线对齐。
+			</p>  
+			
+			<div class="img_wrap">
+
+				<img src="../../pic/blog_pic/web_html_css_1.png">
+			</div>
+
+
+			<p>首先使用了 ::first-letter伪元素的选择器，将字体变大后，发现下划线没法对齐，代码如下：</p>
+
+
+
+			<pre>
+				&lt;p&gt;dddddddddd&lt;/p&gt;
+
+
+				p{
+				    font-size: 44px;
+				    text-decoration: underline;
+				}
+				p:first-letter{
+				    font-size：80px;
+				}
+			</pre>
+
+
+			<div class="img_wrap">
+
+				<img src="../../pic/blog_pic/web_html_css_2.png">
+			</div>
+
+
+			<p>后来改用 font-variant、text-transform 属性后解决了这个问题，代码如下；</p>
+
+
+			<blockquote>
+				p{ 
+				    font-size: 44px;
+				    text-decoration: underline;
+				    font-variant: small-caps; //关键属性
+				    text-transform: capitalize; //关键属性
+				}
+			</blockquote>
+
+
+			<div class="img_wrap">
+
+				<img src="../../pic/blog_pic/web_html_css_3.png">
+			</div>
+
+
+			<p><strong>text-transform 属性</strong></p>
+			<p>这个属性会改变元素中的字母大小写，而不论源文档中文本的大小写。<br>
+　　		   如果值为 capitalize，则要对某些字母大写，但是并没有明确定义如何确定哪些字母要大写，这取决于用户代理如何识别出各个“词”。				</p>
+
+
+
+			<table class="table table-bordered" "> 
+			   	<tbody> 
+				    <tr>
+					   <th>值</th>
+					   <th>描述</th>
+					</tr> 
+					<tr> 
+					   <td>none</td> 
+					   <td>默认。定义带有小写字母和大写字母的标准的文本。</td> 
+					</tr> 
+					<tr> 
+					   <td>capitalize</td> 
+					   <td>文本中的每个单词以大写字母开头。</td> 
+					</tr> 
+					<tr> 
+					   <td>uppercase</td> 
+					   <td>定义仅有大写字母。</td> 
+					</tr> 
+					<tr> 
+					   <td>lowercase</td> 
+					   <td>定义无大写字母，仅有小写字母。</td> 
+					</tr> 
+					<tr> 
+					   <td>inherit</td> 
+					   <td>规定应该从父元素继承 text-transform 属性的值。</td> 
+					</tr> 
+				 </tbody> 
+			</table>
+
+
+			<p>兼容性:<br>
+			   浏览器兼容：IE、Firefox、Chrome、Safari、Opera<br>
+			   注释：任何的版本的 Internet Explorer （包括 IE8）都不支持属性值 "inherit"。所有浏览器都支持 text-transform 属性。
+			</p>
+
+
+			<p><strong>font-variant 属性</strong></p>
+			<p>设置小型大写字母的字体显示文本，这意味着所有的小写字母均会被转换为大写，但是所有使用小型大写字体的字母与其余文本相比，其	  字体尺寸更小。(意味着已经使用大写字母的文本字体会更大)。。				
+			</p>
+
+
+			<table style="margin-left: auto; margin-right: auto"> 
+				<tbody> 
+					<tr>
+						<th>值</th>
+						<th>描述</th>
+					</tr> 
+					<tr> 
+						<td>normal</td> 
+						<td>默认值。浏览器会显示一个标准的字体。</td> 
+					</tr> 
+					<tr> 
+						<td>small-caps</td> 
+						<td>浏览器会显示小型大写字母的字体。</td> 
+					</tr> 
+					<tr> 
+						<td>inherit</td> 
+						<td>规定应该从父元素继承 font-variant 属性的值。</td> 
+					</tr> 
+				</tbody> 
+			</table>
+
+
+			<p>兼容性:<br>
+
+		   　　所有主流浏览器都支持 font-variant 属性。注释：任何的版本的 Internet Explorer （包括 IE8）都不支持属性值 "inherit"。
+		    </p>
+
+
+
+        </div><!-- /.blog-post -->
+
+
+
+
+        <div class="blog_post">
+            <h3 class="blog_post_title">绝对定位absolute，可以用left:50%加上margin-left:(宽度/2)，来实现绝对定位的居中</h3>
+
+			<blockquote>
+				<pre>
+					.main{                 
+						position:absolute;
+						width:1200px;
+						left:50%;
+						margin-left:-600px;
+					}
+				</pre>
+			</blockquote>
+
+
+
+
+        </div><!-- /.blog-post -->
+
+
+
+
+        <a class="back" href="../home.html">返回首页</a>
+
+      	   
+
+
+
+	</div> <!--  container -->
+
+
+
+
+
+
+</body>
+</html>

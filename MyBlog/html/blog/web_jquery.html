@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../../pic/title.ico">
+	<title>jQuery文件知识点及问题解决</title>
+
+
+	<!-- Bootstrap 核心 CSS 文件 --> 
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+	<link rel="stylesheet" type="text/css" href="../../css/blog_page_style.css">
+
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="page-header">
+			<h2>jQuery知识点及问题解决</h2>
+		</div>
+
+		<div class="blog_post">
+            <h3 class="blog_post_title">jQuery 遍历 - is() 方法</h3>
+
+    		<p><strong>定义和用法</strong></p>
+    		<p class="blog_indent">is() 根据选择器、元素或 jQuery 对象来检测匹配元素集合，如果这些元素中至少有一个元素匹配给定的参数，则返回 true。</p>
+    		<p><strong>语法</strong></p>
+    		<blockquote>
+    			<p>.is(selector)   selector:字符串值，包含匹配元素的选择器表达式</p>
+			</blockquote> 
+			
+
+
+			<p><strong>详细说明</strong></p>
+			<p class="blog_indent">与其他筛选方法不同，.is() 不创建新的 jQuery 对象。相反，它允许我们在不修改 jQuery 对象内容的情况下对其进行检测。这在 callback 内部通常比较有用，比如事件处理程序。假设我们有一个列表，其中两个项目包含子元素：</p>
+
+
+			<pre>
+				&lt;ul&gt;
+				  &lt;li&gt;list &lt;strong&gt;item 1&lt;/strong&gt;&lt;/li&gt;
+				  &lt;li&gt;&lt;span&gt;list item 2&lt;/span&gt;&lt;/li&gt;
+				  &lt;li&gt;list item 3&lt;/li&gt;
+				&lt;/ul&gt;
+			</pre>
+
+
+			<p class="blog_indent">您可以向元素添加 click 处理程序，然后把代码限制为只有当列表项本身，而非子元素，被点击时才进行触发：</p>
+
+			<pre>
+			$(&quot;ul&quot;).click(function(event) {
+			  var $target = $(event.target);
+			  if ( $target.is(&quot;li&quot;) ) {
+			    $target.css(&quot;background-color&quot;, &quot;red&quot;);
+			  }
+			});
+			</pre>
+
+
+
+			
+        </div><!-- /.blog-post -->
+
+		
+		
+
+
+
+
+        <a class="back" href="../home.html">返回首页</a>
+
+      	   
+
+
+
+	</div> <!--  container -->
+
+
+
+
+
+
+</body>
+</html>

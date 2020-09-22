@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<!--头部-->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<link rel="icon" href="title.ico">
+	<title>「红包来啦」七夕送520现金红包，这才是爱！（内含彩蛋）</title>
+
+
+	<!-- Bootstrap 核心 CSS 文件 --> 
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+
+	<style type="text/css">
+		.container{
+			padding-right: 15px;
+  			padding-left: 15px;
+		}
+
+		@media (min-width: 768px) {
+		  .container {
+		    max-width: 700px;
+		    padding-bottom: 50px;
+		  }
+		}
+
+		.content_title{
+			text-align: center;
+		}
+		
+
+		/*日期和来源用户样式*/
+		#post-date{
+			font-style: none;
+			color: #8c8c8c;
+			display: inline-block;
+		    vertical-align: middle;
+		    margin-right: 8px;
+		    margin-bottom: 10px;
+		    font-size: 16px;
+		}
+
+
+		#post-user{
+			font-style: none;
+			display: inline-block;
+		    vertical-align: middle;
+		    margin-right: 8px;
+		    margin-bottom: 10px;
+		    font-size: 16px;
+		}
+
+
+		/*主体内容样式*/
+		.content_main{
+			width: 95%;
+			text-align: center;
+		}
+
+
+		/*红色字体样式*/
+		.red_color_font{
+			color: rgb(255,0,0);
+		}
+
+
+		.big_red_color_font{
+			color:rgb(255,0,0);
+			font-size: 20px;
+		}
+
+
+		.content_main .big_img img{
+			width: 75%;
+			margin-bottom: 10px; 
+		}
+
+
+		
+
+		/*文字与图片的间隔*/
+		.text_wrap{
+			padding-bottom: 25px;
+		}
+
+
+		/*斑点边框图*/
+		.dotted_box{
+			max-width: 100%;
+		    padding: 10px;
+		    display: inline-block;
+		    width: 634px;
+		    border-width: 2px;
+		    border-style: dotted;
+		    border-color: rgb(192, 200, 209);
+		    border-radius: 11px;
+
+		    margin-bottom: 30px;
+		}
+
+
+
+		/*红色背景链接样式*/
+		.link{
+			margin: 10px auto;
+		    max-width: 100%;
+		    width: 180px;
+		    height: 40px;
+		    overflow: hidden;
+		    background-image: url(red_bg_pic.png);
+		    background-size: 100%;
+		    background-repeat: no-repeat;
+		}
+
+		.link a{
+			color: rgb(255, 255, 255);
+		    text-decoration: underline;
+		    max-width: 100%;
+		    font-size: 18px;
+		    line-height: 40px;
+		}
+		
+
+
+		/*红色爱心背景样式*/
+		.red_left_content{
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		.outer_wrap{
+			margin-left: 20px;
+			padding-top: 5px;
+			padding-left: 26px;
+			max-width: 100%;
+			color: inherit;
+			border-left: 2px dotted rgb(228, 228, 228);
+
+		}
+
+
+		.red_heart_bg{
+			margin-top: 11px;
+		    margin-left: -45px;
+		    max-width: 100%;
+		    min-height: 1em;
+		    width: 35px;
+		    height: 31px;
+		    color: rgb(255, 255, 255);
+		    text-align: center;
+		    line-height: 1.75em;
+		    background-image: url(redHeart_bg_pic.png);
+		    background-size: 100%;
+		    background-repeat: no-repeat;
+		}
+
+
+		.white_font{
+			color: rgb(255, 255, 255);
+		    max-width: 100%;
+		    font-size: 18px;
+		    line-height: 31px;
+		}
+
+
+		.inner_wrap{
+			margin-top: -38px;
+			text-align: left;
+		}
+
+
+		.red_left_content .outer_wrap .inner_wrap img{
+			width: 80%;
+		}
+
+
+
+
+
+
+		/*底部阅读原文*/
+		.content_footer{
+			padding-top: 30px;
+		}
+
+
+
+
+		/*二维码样式*/
+		.qr_code_outer{
+			position: fixed;
+		    left: 0;
+		    right: 0;
+		    top: 20px;
+		    color: #717375;
+		    text-align: center;
+		}
+
+
+		.qr_code_out{
+			position: relative;
+		    width: 740px;
+		    margin-left: auto;
+		    margin-right: auto;
+
+		}
+
+		.qr_code{
+			position: absolute;
+		    right: -130px;
+		    top: 0;
+		    width: 140px;
+		    padding: 16px;
+		    border: 1px solid #d9dadc;
+		    background-color: #fff;
+
+
+		    text-align: center;
+		}
+
+
+		.qr_code img{
+			width: 102px;
+		}
+
+
+
+ 	</style>
+	
+</head>
+<body>
+
+	<div class="container">
+		<div class="page-header">
+			<h3 class="content_title">「红包来啦」七夕送520现金红包，这才是爱！（内含彩蛋）</h3>
+		</div>
+		<div>
+			<span id="post-date">2017-08-28</span>
+			<a id="post-user"  href="#">116114官方</a>
+		</div>
+
+
+		<div class="content_main">
+			<div class="text_wrap">
+				<p>就是今天</p>
+				<p>一年一度的情人节</p>
+				<p>又 双 叒 叕 来 了！！！</p>
+				<p>空气中散发着一股<sapn class="red_color_font">恋爱的酸臭味！</sapn></p>
+			</div>
+
+			<div class="big_img">
+
+				<img src="1.jpg">
+				<img src="2.jpg">
+				<img src="3.jpg">
+
+			</div>
+
+			<p>▽</p>
+
+			<div class="text_wrap">
+				<p>据世上最权威的机构研究</p>
+				<p><sapn class="red_color_font">95%</sapn>以上的单身只和一样东西有关</p>
+				<p>↓↓</p>
+				<p class="red_color_font">脸</p>
+				<img src="4.png">
+			</div>
+
+
+			<div class="text_wrap">
+				<p>所以</p>
+				<p><span class="red_color_font">单身女生如果想要跟男神表白成功</span></p>
+				<p>有三样就行：</p>
+				<p>1.在晚上</p>
+				<p>2.穿裙子</p>
+				<p>3.去室外</p>
+				<img src="5.gif">
+			</div>
+
+
+			<div class="text_wrap">
+				<p class="red_color_font">而单身男生如果想跟女神表白成功</p>
+				<p>也是有三样就行</p>
+				<p>1.长得帅</p>
+				<p>2.长得帅</p>
+				<p>3.长得帅</p>
+				<img src="6.gif">
+				<p>或者，还有个压箱绝招</p>
+				<p>那就是：在表白的时候给<span>男/女神送个大红包</span></p>
+
+				<p>▽</p>
+			</div>
+			
+
+			
+
+
+
+			<div class="dotted_box">
+				<p>庆祝七夕，<span class="red_color_font">116114官方</span>送出</p>
+				<p>“<span class="big_red_color_font">520</span>”元现金大红包</p>
+				<p>只要今天在公众号成功下单的用户</p>
+				<p>无论订单大小，你都有可能成为<span class="red_color_font">520现金大奖</span>那个幸运儿</p>
+
+				<img src="arrow.png">
+
+
+				<div class="link">
+					<a href="JavaScript:void(0)"><strong>戳我订购赢大奖</strong></a>
+				</div>
+			</div>
+
+
+			<div class="text_wrap">
+				<p><span class="red_color_font">等等！</span>你以为福利这就结束了吗？</p>
+
+				<p><span class="red_color_font">NO!</span>我们还有一大波好礼蓄势待发，</p>
+				<p class="red_color_font">电视宝、蓝牙耳机、免费流量、流量折扣券...</p>
+				<p>只要参与留言互动，就有机会带走，</p>
+				<p>话不多说，快来看看本期的互动话题吧！</p>
+			</div>
+
+			<img src="7.gif">
+
+
+			<!-- 带爱心背景图的左边框的部分 -->
+			<div class="red_left_content">
+				<div class="outer_wrap">
+					<p class="red_heart_bg"><span class="white_font">01</span></p>
+					<div class="inner_wrap">
+						<p class="red_color_font">本期话题</p>
+						<p><strong>#七夕，你会用什么方式对你的男/女神表白# </strong></p>
+						<p>参与本期互动话题讨论，只要你的留言够走心，小6就扶你上墙~让100万用户见证你们的爱情；</p>
+					</div>
+				</div>
+
+				<div class="outer_wrap">
+					<p class="red_heart_bg"><span class="white_font">02</span></p>
+					<div class="inner_wrap">
+						<p class="red_color_font">点赞奖品</p>
+						<p><strong>留言点赞数第一名：</strong>送价值299元爱奇艺电视果</p>
+						<img src="8.jpg">
+						<p><strong>留言点赞数第二名：</strong>送500M全国通用流量</p>
+						<p><strong>留言点赞数第三名：</strong>送200M全国通用流量</p>
+						<p><strong>留言点赞数前十名：</strong>送五折流量折扣券</p>
+						<p>ps：实物奖品一周内寄送，虚拟物品三个工作日送出；</p>
+					</div>
+				</div>
+
+				<div class="outer_wrap">
+					<p class="red_heart_bg"><span class="white_font">01</span></p>
+					<div class="inner_wrap">
+						<p class="red_color_font">点赞时间</p>
+						<p class="red_color_font">8月28日全天，24日截止；</p>
+					</div>
+				</div>
+				
+			</div>
+			
+
+
+			<div class="text_wrap">
+				<p>左看，右看，上看，下看</p>
+				<p>是不是发现每个福利都不简单？</p>
+				<p>想了又想，看了又看</p>
+				<p>是不是觉得每个礼物真心都超喜欢？</p>
+				<p>既然喜欢，那就赶紧行动起来吧，写留言啦~</p>
+				<p>▽</p>
+				<p>最后，小6愿天下有情人终成眷属！</p>
+				<p>愿年迈蹒跚，阳光和你仍在。</p>
+			</div>
+
+
+			<img src="9.gif">
+
+
+
+
+
+			
+
+
+
+
+
+
+		</div><!--content_main-->
+
+
+
+		<div class="content_footer">
+			<a id="post-user"  href="JavaScript:void(0)">阅读原文</a>
+		</div>
+
+
+	</div><!--container-->
+	
+	<!-- 二维码 -->
+	<div class="qr_code_outer">
+		<div class="qr_code_out">
+			<div class="qr_code">
+				<img src="qrcode.bmp">
+				<p>微信扫一扫</p>
+				<p>关注该公众号</p>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+
+	</script>
+	
+</body>
+</html>

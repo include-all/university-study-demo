@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="icon" href="title.ico">
+	<title>Welcome to book seller</title>
+
+
+	<!-- Bootstrap 核心 CSS 文件 --> 
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		/*在大分辨率下设置宽度*/
+		@media (min-width: 1200px) {
+		  .container {
+		    width: 700px;
+		  }
+
+		}
+
+		.sub_res{
+
+
+			margin-top: 30px;
+			margin-right: 20px;
+			margin-bottom: 50px;
+			width: 140px;
+		    padding: 10px 20px;
+		    text-align: center;
+		    border-radius: 30px;
+
+		    display: inline-block;
+		    padding: 5px 14px;
+		    border: 1px solid #ddd;
+		    border-radius: 15px;
+
+
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1>You are welcome</h1>
+		</div>
+
+
+		<form  action="handle.php" method="POST">
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label class="col-md-4 control-label">please input your name:
+					</label>
+					<div class="col-md-8">
+						<input type="text" class="form-control" name="name">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">please input your address:
+					</label>
+					<div class="col-md-8">
+						<input type="text" class="form-control" name="address">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label class="col-md-4 control-label">please input your zip:
+					</label>
+					<div class="col-md-8">
+						<input type="text" class="form-control" name="zip">
+					</div>
+				</div>
+
+				<h3>please fill in the quantity field of the following form</h3>
+
+				<table class="table table-bordered">
+					<tr>
+						<th>book</th>
+						<th>publisher</th>
+						<th>price</th>
+						<th>quantity</th>
+					</tr>
+
+					<tr>
+						<td>Web technology</td>
+						<td>Springer press</td>
+						<td>$5.0</td>
+						<td><input type="text" name="book1" size="30"></td>
+					</tr>
+
+					<tr>
+						<td>mathematics</td>
+						<td>ACM press</td>
+						<td>$6.2</td>
+						<td><input type="text" name="book2" size="30"></td>
+					</tr>
+
+					<tr>
+						<td>principle of OS</td>
+						<td>Science press</td>
+						<td>$10</td>
+						<td><input type="text" name="book3" size="30"></td>
+					</tr>
+
+					<tr>
+						<td>Theory of matrix</td>
+						<td>High education press</td>
+						<td>$7.8</td>
+						<td><input type="text" name="book4" size="30"></td>
+					</tr>
+				</table>
+
+				<h3>payment method</h3>
+				<div class="radio">
+					<label>
+						<input type="radio" name="payment" value="cash" checked="checked">cash<br>
+					</label>
+				</div>
+
+				<div class="radio">
+					<label>
+						<input type="radio" name="payment" value="cheque">cheque<br>
+
+					</label>
+				</div>
+				
+
+
+
+				<div class="radio">
+					<label>
+						<input type="radio" name="payment" value="credit card">credit card
+					</label>
+				</div>
+				
+			</div>
+				
+
+			
+				<button class="btn btn-info sub_res" type="submit">submit</button>
+
+
+
+				<button  class="btn btn-danger sub_res" type="reset">reset</button>
+		</form>
+
+	</div>
+	
+</body>
+</html>

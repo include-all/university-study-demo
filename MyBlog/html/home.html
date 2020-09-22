@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../pic/title.ico">
+	<title>Home of My Blog</title>
+
+
+	<!-- Bootstrap 核心 CSS 文件 --> 
+	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 --> 
+	<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../css/home_page_style.css">
+
+
+	<style type="text/css">
+
+		.bg{  
+		  background-image: url(../pic/bg_pic.jpeg);  
+		  background-repeat: no-repeat;  
+		  background-size: 100% 100%;  
+		} 
+
+
+		#show_time{
+			text-align: center;
+			font-size: 2em;
+		}
+
+		.dropdown button,.dropdown ul{
+			background-color: rgb(238,231,221);
+		}
+	</style>
+
+
+</head>
+<body class="bg">
+
+		
+
+
+	<div class="blog-masthead">
+	    <div class="container">
+	        <nav class="blog-nav">
+	            <a class="blog-nav-item active" href="#">Home</a>
+	            <a class="blog-nav-item" href="note/note_index.html">My note</a>
+	            <a title="back to the index" class="blog-nav-item" href="../../index.html">Exit</a>
+	            <a class="blog-nav-item" href="#"></a>
+	            <a class="blog-nav-item" href="#"></a>
+	        </nav>
+	    </div>
+    </div>
+
+	<div class="container">
+		
+		<!-- 首页的页头 -->
+    	<div class="page-header">
+    		<h1>Home of My Website</h1>
+    		<p>这里用来记录我的一点一滴</p>
+    	</div>
+
+
+
+
+		<div class="row">
+	       	<div class="col-md-8">
+
+	       		<div class="blog_post">
+		            <h2 class="blog_post_title">前记</h2>
+		            <p class="blog_post_meta">2017年8月25日 <strong>张鹏飞</strong></p>
+
+
+					<div class="blog_content">
+			            <p>这里用来记录我自己在学习中遇到的一些问题，并最终解决他们的方法</p>
+
+			            <blockquote>
+			              <p>希望自己能够在一点一滴的学习中进步，能够学习更多的知识，让自己的技能点更强，同时，在每次解决问题后下次遇到同样的问题还是做重复劳动，现在将它们记录在这里，就不会忘记了，可以节省自己的时间</p>
+			            </blockquote>
+						
+
+
+						<!-- ============================================时间================================================= -->
+						
+						<div id="show_time"></div>					
+
+
+
+						<!-- ==================================================================================================== -->
+
+
+						<h3>简介</h3>
+			            <blockquote>
+			            	<p>
+			            		这一页是首页，顶部菜单栏第一个是首页，第二个是日常记录页，可以自己编辑记录和删除
+			            	</p>
+							<p>
+							    左侧是博文引导栏，每个下拉菜单的每个list都是指向一篇博文，主要是记录自己学习中的一些知识点。
+							</p>
+							<p>
+							    中间时间显示，显示现在时间，是通过每隔1s调用函数实现的时间不断刷新
+			            	</p>
+			            </blockquote>
+
+		            </div>
+
+		        </div><!-- /.blog-post -->
+
+
+	       	</div><!-- col-md-8 -->
+
+
+
+	       	<div class="col-sm-3 col-sm-offset-1 blog_sidebar">
+	            <div class="sidebar_module sidebar_module_inset">
+	                <h4>关于</h4>
+	                <p>下面是博文的列表，这一个简单的个人博客用于记录自己的一点一滴，也用来学习新知识，记录下自己
+	                在学习路中的积累</p>
+	            </div>
+
+	            <div class="sidebar_module">
+	                <h4>我的博客列表</h4>
+
+	                <!-- 侧边栏下拉问题 -->
+	                <div class="dropdown ">
+					    <button class="btn btn-default dropdown-toggle"   type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="  true">
+					      前端
+					        <span class="caret"></span>
+					    </button>
+					    <ul  class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					        <li><a href="blog/web_js.html">JavaScript</a></li>
+					        <li><a href="blog/web_html_css.html">HTML&&CSS</a></li>
+					        <li><a href="blog/web_bootstrap.html">Bootstrap</a></li>
+					        <li><a href="blog/web_jquery.html">jQuery</a></li>
+					    </ul>
+					</div>
+
+
+					<div class="dropdown ">
+					    <button class="btn btn-default dropdown-toggle"   type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					      阿里云配置及问题解决
+					        <span class="caret"></span>
+					    </button>
+					    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+					        <li><a href="blog/aliyun_1.html">阿里云配置</a></li>
+					        <li><a href="blog/aliyun_2.html">阿里云问题解决</a></li>
+					</div>
+
+
+					<div class="dropdown">
+					    <button class="btn btn-default dropdown-toggle"   type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+					      git
+					        <span class="caret"></span>
+					    </button>
+					    <ul class="dropdown-menu" aria-labelledby="dropdownMenu3">
+					        <li><a href="blog/git_local_link_github.html">本地与github链接</a></li>
+					    </ul>
+					</div>
+
+
+	                
+	            </div>
+
+
+	            <div class="sidebar_module">
+	                <h4>Elsewhere</h4>
+	                <ol class="list-unstyled">
+	                    <li><a href="https://github.com/include-all">GitHub</a></li>
+	                    <li><a href="http://blog.csdn.net/include_all/article/details/50595103">CSDN</a></li>
+	                </ol>
+	            </div>
+	        </div><!-- col-md-3 -->
+	    </div> <!-- row -->
+
+		
+
+
+		
+
+    </div> <!-- container -->
+
+
+
+    <footer class="blog_footer">
+        <p>Blog built for myself by zhangpengfei</p>
+        <p>
+           <a href="#">Back to top</a>
+        </p>
+    </footer>
+
+
+
+    <script type="text/javascript">
+		$(function () {
+			GetTime();
+	       	setInterval("GetTime()", 1000);
+	    });
+		
+		//获取时间并设置格式
+		function GetTime() {
+			var day = new Array("星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六");
+		    var now = new Date();
+		    var hour = now.getHours();
+			var min = now.getMinutes();
+			var sec = now.getSeconds();
+			if (hour < 10) {
+				hour = "0" + hour;
+			}
+			if (min < 10) {
+				min = "0" + min;
+			}
+		    if (sec < 10) {
+		        sec = "0" + sec;
+		    }
+
+		    $("#show_time").html(
+		        now.getFullYear() + "年" + (now.getMonth() + 1) + "月" + now.getDate() + "日" + "  " + day[now.getDay()]+"  " + hour + ":" + min + ":" + sec );
+		}
+
+
+	</script>
+
+
+
+
+	
+</body>
+</html>

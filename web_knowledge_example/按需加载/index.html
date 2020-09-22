@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片按需加载</title>
+
+
+</head>
+<body id="body">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/37683/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/f7680/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/27689/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/97689/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/47683434/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/344D3C/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/96783/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/96780/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/96789/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/96789/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/983434/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/967D3C/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/273459/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/973459/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/473453434/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/343453C/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/963453/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/963450/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/963459/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/963459/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/963453434/fff" alt="">
+    <img src="" width="990px" height="100px" data-src="http://dummyimage.com/990x90/963454D3C/fff" alt="">
+
+
+    <script type="text/javascript">
+
+	    (function (){
+
+	    	var imgNum=document.getElementsByTagName('img').length;
+		    var imgObj=document.getElementsByTagName("img");
+		    var l=0;
+
+		    var lazyLoad = function(){
+		        var seeHeight = document.documentElement.clientHeight;
+		        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+		        for(var i=l;i<imgNum;i++){
+		            if(imgObj[i].offsetTop < seeHeight + scrollTop){
+		                console.log(imgObj[i].getAttribute("src"));
+		                console.log(imgObj[i].src );
+		                if(imgObj[i].getAttribute("src") == ""){
+		                    imgObj[i].src = imgObj[i].getAttribute("data-src");
+		                }
+		            }
+		            if(imgObj[i].offsetTop > seeHeight + scrollTop){
+		                l=i;
+		                break;
+		            }
+		        }
+	    	}
+
+		    window.onload = lazyLoad;
+
+		    window.onscroll = lazyLoad;
+		})();
+
+
+    </script>
+</body>
+</body>
+</html>

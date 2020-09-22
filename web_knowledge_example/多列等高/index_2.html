@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex实现多列等高</title>
+
+
+	<style type="text/css">
+		#wrapper {
+			width: 1000px;
+			margin: 0 auto;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		
+		#left,#right{
+			width: 300px;
+			background-color: #ccc;
+		}
+
+		#middle{
+			width: 330px;
+			background-color: #eee;
+			height: 500px;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div id="wrapper">
+		<div id="left">left</div>
+
+		<div id="middle">middle</div>
+
+		<div id="right">right</div>
+
+
+	</div>
+
+	
+</body>
+</html>
